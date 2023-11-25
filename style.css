@@ -1,0 +1,340 @@
+@import url(https://fonts.googleapis.com/css?family=Handlee);
+* {
+	margin: 0;
+	box-sizing: border-box;
+    font-family: 'Handlee', cursive;
+    letter-spacing: 2px;
+}
+
+body {
+	margin: 0;
+    min-width: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: gradientAnimation 5s infinite linear;
+    transition: 1s ease;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background: linear-gradient(to right,#de91ff, #a1479b, #ff73f6);
+  }
+  50% {
+    background: linear-gradient(to right, #ff73f6,rgb(244, 121, 176), #9d38be);
+  }
+  100% {
+    background: linear-gradient(to right,#9d38be, #d834db,#de91ff);
+  }
+}
+
+header {
+	background: radial-gradient(#b043cb,rgb(125, 38, 134));
+    padding: 30px 40px;
+    color: white;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 2rem 1rem;
+	max-width: 800px;
+	width: 100%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 1px 1px 0px rgb(125, 38, 134),
+                2px 2px 0px rgb(255, 171, 255),
+                3px 3px 0px rgb(255, 171, 255),
+                4px 4px 0px rgb(255, 171, 255),
+                5px 5px 0px rgb(255, 171, 255),
+                6px 6px 0px rgb(255, 171, 255),
+                7px 7px 0px rgb(255, 171, 255),
+                8px 8px 0px rgb(87, 59, 87);
+}
+
+.todoicon{
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+#icon {
+    width: 50px; 
+    margin-right: 10px;
+}
+
+header h1{ 
+	font-size: 2rem;
+	font-weight: bolder;
+	font-family: 'Handlee', cursive;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-top: 1%;   
+    color: white;
+    margin: 0;
+    
+}
+
+
+#new-task-form {
+	display: flex;
+    margin: 15px 0;
+    padding: 0.8rem;
+    width: 100%;
+    font-size: 1.7rem;
+}
+
+input, button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+#new-task-input {
+	flex: 1 1 0%;
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-right: 1rem;
+	font-size: 1.25rem;
+    background-color: rgb(255, 197, 253);
+    color: rgb(69, 3, 76);
+    font-family:'Handlee', cursive;;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    border: 2px solid #fff; 
+}
+
+#new-task-input::placeholder {
+    color: rgb(40, 8, 60);
+    opacity: 0.7;
+}
+
+#new-task-submit {
+    letter-spacing: 2px;
+    display: block;
+    margin-top: 2%;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background-image: linear-gradient( #93448b, rgb(104, 23, 101));
+    color: #fff;
+    transform: translateY(-6px);
+    cursor: pointer;
+    font-family: 'Handlee', cursive;
+    font-weight: bolder;
+    transition: box-shadow 0.3s, transform 0.3s;
+    border: 2px solid #fff; 
+}
+
+#new-task-submit:hover {
+    color: rgb(66, 4, 59);
+    box-shadow: 0 0 10px rgba(255, 254, 255, 0.8); 
+    transform: translateY(-3px); 
+}
+
+#new-task-submit:active {
+	transform: translateY(-2px);
+}
+
+main {
+	flex: 1 1 0%;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+    
+}
+
+.bgtrans {
+    background: radial-gradient(#5f175f 6px, transparent 7px) repeat-x,
+                linear-gradient(rgba(255, 255, 255, 0.8) 1px, transparent 1px), 
+                linear-gradient(90deg, rgba(255, 255, 255, 0.8) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-color: rgb(227, 171, 239);
+    border-radius: 2rem;
+    border: 3px dashed #6c2461;
+    padding: 20px;
+    margin-top: 20px;
+    height: 500px;
+    
+}
+.task-list {
+	padding: 1rem;
+	color: #000000;	
+}
+#tasks .task {
+	display: flex;
+	justify-content: space-between;
+	background-color:rgba(131, 65, 152, 0.75);
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+    border: 2px ridge white;
+}
+
+#tasks .task:hover{
+    box-shadow: 0 0 10px rgba(193, 58, 193, 0.9); 
+}
+
+.task .content {
+	flex: 1 1 0%;
+}
+
+.task .content .text {
+    color: #fff;
+	font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+	width: 100%;
+	display: block;
+	transition: 0.4s;
+}
+
+.task .actions {
+	display: flex;
+	margin: 0 -0.5rem;
+}
+
+.task .actions button {
+	cursor: pointer;
+	margin: 0 0.5rem;
+	font-size: 1.125rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: 0.4s;
+}
+
+.task .actions .edit {
+	color:rgba(0, 0, 0, 0.75);
+	font-size: 1.5rem;
+	font-weight: 700;
+	background: rgba(247, 149, 247, 0.7);
+	cursor: pointer;
+	transition: 0.4s;
+    border-radius: 10px;
+}
+
+.task .actions .edit:hover {
+    background-color: rgb(26, 29, 191);
+    box-shadow:rgba(246, 215, 255, 0.8);
+}
+
+.task .actions .edit:active {
+	opacity: 0.6;
+}
+
+.task .actions .delete {
+    background:  rgba(247, 149, 247, 0.7);
+    border-radius: 10px;
+    font-size: 1.5rem;
+}
+
+.task .actions .delete:hover {
+    background-color: rgb(191, 26, 26);
+    box-shadow:rgba(246, 215, 255, 0.8);
+}
+
+.task .actions .delete:active {
+	opacity: 0.6;
+}
+
+.task .actions .complete {
+    color:#fff;
+    background:  rgba(247, 149, 247, 0.7);
+    border: 1px solid white;
+    border-radius: 3rem;
+    font-size: small;
+    
+}
+
+.task .actions .complete:hover {
+    color: #fff;
+    background-color: rgba(24, 155, 24, 0.8);
+    box-shadow: rgba(131, 65, 152, 0.8);
+}
+
+.task .actions .complete:active {
+	opacity: 0.6;
+}
+
+.notification {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+/* Tablet */
+@media only screen and (max-width: 767px) {
+    header {
+        padding: 20px;
+        font-size: 2rem;
+    }
+
+    #new-task-input {
+        font-size: 1rem;
+    }
+
+    #new-task-submit {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    h2 {
+        margin-left: 20px;
+    }
+
+    .task .content .text {
+        font-size: 1rem;
+    }
+
+    .task .actions button {
+        font-size: 1rem;
+    }
+
+    .task .actions .edit {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+    header {
+        padding: 10px;
+        font-size: 1.5rem;
+    }
+
+    #new-task-input {
+        font-size: 1rem;
+    }
+
+    #new-task-submit {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 0.5rem;
+    }
+
+    h2 {
+        margin-left: 10px;
+    }
+
+    .task .content .text {
+        font-size: 0.875rem;
+    }
+
+    .task .actions button {
+        font-size: 0.875rem;
+    }
+
+    .task .actions .edit {
+        font-size: 1rem;
+    }
+}
